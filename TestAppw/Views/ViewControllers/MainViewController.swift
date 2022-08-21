@@ -9,6 +9,11 @@ import UIKit
 import Combine
 class MainViewController: UIViewController {
     
+    
+    
+    @IBOutlet weak var Label: UILabel!
+    
+    
     private var model = Welcome()
     private let vm = MainViewModel()
     private let input: PassthroughSubject<MainViewModel.Input, Never> = .init()
@@ -32,7 +37,7 @@ class MainViewController: UIViewController {
           .sink { [weak self] event in
           switch event {
           case .fetchMainModelDidSucceed(let model):
-              print(model)
+              self?.Label.text = model.bestSeller![1].title
           case .fetchMainModelDidFail(let error):
               print(error)
           }
@@ -40,6 +45,8 @@ class MainViewController: UIViewController {
         
     }
 
+    @IBAction func ButtonTapped(_ sender: Any) {
+    }
     
 
 }

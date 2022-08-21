@@ -10,8 +10,8 @@ import Foundation
 
 // MARK: - Welcome
 struct Welcome: Decodable {
-    let homeStore: [HomeStore]?
-    let bestSeller: [BestSeller]?
+    var homeStore: [HomeStore]?
+    var bestSeller: [BestSeller]?
 
     enum CodingKeys: String, CodingKey {
         case homeStore = "home_store"
@@ -21,11 +21,11 @@ struct Welcome: Decodable {
 
 // MARK: - BestSeller
 struct BestSeller: Decodable {
-    let id: Int?
-    let isFavorites: Bool?
-    let title: String?
-    let priceWithoutDiscount, discountPrice: Int?
-    let picture: String?
+    var id: Int?
+    var isFavorites: Bool?
+    var title: String?
+    var priceWithoutDiscount, discountPrice: Int?
+    var picture: String?
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -39,11 +39,11 @@ struct BestSeller: Decodable {
 
 // MARK: - HomeStore
 struct HomeStore: Decodable {
-    let id: Int?
-    let isNew: Bool?
-    let title, subtitle: String?
-    let picture: String?
-    let isBuy: Bool?
+    var id: Int?
+    var isNew: Bool?
+    var title, subtitle: String?
+    var picture: String?
+    var isBuy: Bool?
 
     enum CodingKeys: String, CodingKey {
         case id
