@@ -8,16 +8,16 @@
 import Foundation
 
 // MARK: - Cart
-struct MyCart: Codable {
-    let basket: [Basket]
-    let delivery, id: String
-    let total: Int
+struct MyCart: Decodable {
+    var basket: [Basket]?
+    var delivery, id: String?
+    var total: Int?
 }
 
 // MARK: - Basket
-struct Basket: Codable {
-    let id: Int
-    let images: String
-    let price: Int
-    let title: String
+struct Basket: Decodable {
+    var id: Int?
+    var images: String?
+    var price: Int?
+    var title: String?
 }
