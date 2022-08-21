@@ -83,36 +83,6 @@
             </objects>
             <point key="canvasLocation" x="1967.6923076923076" y="4.9763033175355451"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="MPw-Qf-4d3">
-            <objects>
-                <viewController id="Ppi-fe-jUa" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="LvK-rb-TWA">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="q4f-QE-qd5"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gpA-KJ-vpI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1088" y="724"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="aVB-uL-uwj">
-            <objects>
-                <viewController id="s7L-An-D78" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="a5c-X4-FPM">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="oqa-4p-dGI"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qXv-zg-Tv8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2251" y="715"/>
-        </scene>
         <!--My Cart View Controller-->
         <scene sceneID="16g-oB-IYL">
             <objects>
