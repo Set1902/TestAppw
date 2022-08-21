@@ -9,9 +9,9 @@ import Foundation
 
 
 // MARK: - Welcome
-struct Welcome: Codable {
-    let homeStore: [HomeStore]
-    let bestSeller: [BestSeller]
+struct Welcome: Decodable {
+    let homeStore: [HomeStore]?
+    let bestSeller: [BestSeller]?
 
     enum CodingKeys: String, CodingKey {
         case homeStore = "home_store"
@@ -20,12 +20,12 @@ struct Welcome: Codable {
 }
 
 // MARK: - BestSeller
-struct BestSeller: Codable {
-    let id: Int
-    let isFavorites: Bool
-    let title: String
-    let priceWithoutDiscount, discountPrice: Int
-    let picture: String
+struct BestSeller: Decodable {
+    let id: Int?
+    let isFavorites: Bool?
+    let title: String?
+    let priceWithoutDiscount, discountPrice: Int?
+    let picture: String?
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -38,12 +38,12 @@ struct BestSeller: Codable {
 }
 
 // MARK: - HomeStore
-struct HomeStore: Codable {
-    let id: Int
+struct HomeStore: Decodable {
+    let id: Int?
     let isNew: Bool?
-    let title, subtitle: String
-    let picture: String
-    let isBuy: Bool
+    let title, subtitle: String?
+    let picture: String?
+    let isBuy: Bool?
 
     enum CodingKeys: String, CodingKey {
         case id
