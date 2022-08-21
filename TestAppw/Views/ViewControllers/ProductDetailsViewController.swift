@@ -6,24 +6,41 @@
 //
 
 import UIKit
-
+import Combine
 class ProductDetailsViewController: UIViewController {
 
+    
+    
+    @IBOutlet weak var Label: UILabel!
+    
+    
+    private var detail = Details()
+    private let vm = ProductDetailsViewModel()
+    private let input: PassthroughSubject<ProductDetailsViewModel.Input, Never> = .init()
+    private var cancellables = Set<AnyCancellable>()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        bind()
+        input.send(.viewDidLoad)
     }
     
+    private func bind() {
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        let output = vm.transform(input: input.eraseToAnyPublisher())
+        output
+          .receive(on: DispatchQueue.main)
+          .sink { [weak self] event in
+          switch event {
+          case .fetchProductDetailDidSucceed(let detail):
+              self?.Label.text = detail.title!
+          case .fetchProductDetailDidFail(let error):
+              print(error)
+          }
+        }.store(in: &cancellables)
+        
     }
-    */
-
 }

@@ -9,15 +9,15 @@ import Foundation
 
 
 // MARK: - Details
-struct Details: Codable {
-    let cpu, camera: String
-    let capacity, color: [String]
-    let id: String
-    let images: [String]
-    let isFavorites: Bool
-    let price: Int
-    let rating: Double
-    let sd, ssd, title: String
+struct Details: Decodable {
+    var cpu, camera: String?
+    var capacity, color: [String]?
+    var id: String?
+    var images: [String]?
+    var isFavorites: Bool?
+    var price: Int?
+    var rating: Double?
+    var sd, ssd, title: String?
 
     enum CodingKeys: String, CodingKey {
         case cpu = "CPU"
