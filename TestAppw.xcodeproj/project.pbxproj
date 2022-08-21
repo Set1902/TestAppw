@@ -25,6 +25,7 @@
 		1D04126128B27A960044051D /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D04126028B27A960044051D /* MainModel.swift */; };
 		1D04126328B27B2C0044051D /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D04126228B27B2C0044051D /* DetailModel.swift */; };
 		1D04126528B27C040044051D /* MyCartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D04126428B27C040044051D /* MyCartModel.swift */; };
+		1D04126728B27C630044051D /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D04126628B27C630044051D /* Service.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		1D04126028B27A960044051D /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		1D04126228B27B2C0044051D /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 		1D04126428B27C040044051D /* MyCartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCartModel.swift; sourceTree = "<group>"; };
+		1D04126628B27C630044051D /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 		1D04124C28B277E40044051D /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				1D04126628B27C630044051D /* Service.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D04125728B279750044051D /* MainViewModel.swift in Sources */,
+				1D04126728B27C630044051D /* Service.swift in Sources */,
 				1D04121E28B277040044051D /* MainViewController.swift in Sources */,
 				1D04122428B277040044051D /* TestAppw.xcdatamodeld in Sources */,
 				1D04125928B2798B0044051D /* ProductDetailsViewModel.swift in Sources */,
