@@ -3,13 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1D04121A28B277040044051D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D04121928B277040044051D /* AppDelegate.swift */; };
 		1D04121C28B277040044051D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D04121B28B277040044051D /* SceneDelegate.swift */; };
-		1D04121E28B277040044051D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D04121D28B277040044051D /* ViewController.swift */; };
+		1D04121E28B277040044051D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D04121D28B277040044051D /* MainViewController.swift */; };
 		1D04122128B277040044051D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D04121F28B277040044051D /* Main.storyboard */; };
 		1D04122428B277040044051D /* TestAppw.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1D04122228B277040044051D /* TestAppw.xcdatamodeld */; };
 		1D04122628B277060044051D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D04122528B277060044051D /* Assets.xcassets */; };
@@ -17,6 +17,12 @@
 		1D04123428B277060044051D /* TestAppwTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D04123328B277060044051D /* TestAppwTests.swift */; };
 		1D04123E28B277060044051D /* TestAppwUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D04123D28B277060044051D /* TestAppwUITests.swift */; };
 		1D04124028B277060044051D /* TestAppwUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D04123F28B277060044051D /* TestAppwUITestsLaunchTests.swift */; };
+		1D04125328B278660044051D /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D04125228B278660044051D /* ProductDetailsViewController.swift */; };
+		1D04125528B2787D0044051D /* MyCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D04125428B2787D0044051D /* MyCartViewController.swift */; };
+		1D04125728B279750044051D /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D04125628B279750044051D /* MainViewModel.swift */; };
+		1D04125928B2798B0044051D /* ProductDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D04125828B2798B0044051D /* ProductDetailsViewModel.swift */; };
+		1D04125B28B279970044051D /* MyCartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D04125A28B279970044051D /* MyCartViewModel.swift */; };
+		1D04125D28B279AA0044051D /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D04125C28B279AA0044051D /* Models.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +46,7 @@
 		1D04121628B277040044051D /* TestAppw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestAppw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D04121928B277040044051D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D04121B28B277040044051D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1D04121D28B277040044051D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1D04121D28B277040044051D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1D04122028B277040044051D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1D04122328B277040044051D /* TestAppw.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestAppw.xcdatamodel; sourceTree = "<group>"; };
 		1D04122528B277060044051D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +57,12 @@
 		1D04123928B277060044051D /* TestAppwUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestAppwUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D04123D28B277060044051D /* TestAppwUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAppwUITests.swift; sourceTree = "<group>"; };
 		1D04123F28B277060044051D /* TestAppwUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAppwUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1D04125228B278660044051D /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
+		1D04125428B2787D0044051D /* MyCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCartViewController.swift; sourceTree = "<group>"; };
+		1D04125628B279750044051D /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		1D04125828B2798B0044051D /* ProductDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewModel.swift; sourceTree = "<group>"; };
+		1D04125A28B279970044051D /* MyCartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCartViewModel.swift; sourceTree = "<group>"; };
+		1D04125C28B279AA0044051D /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,12 +113,13 @@
 		1D04121828B277040044051D /* TestAppw */ = {
 			isa = PBXGroup;
 			children = (
+				1D04124F28B277FD0044051D /* Models */,
+				1D04124E28B277F20044051D /* ViewModels */,
+				1D04124D28B277EB0044051D /* Views */,
+				1D04124C28B277E40044051D /* Service */,
 				1D04121928B277040044051D /* AppDelegate.swift */,
 				1D04121B28B277040044051D /* SceneDelegate.swift */,
-				1D04121D28B277040044051D /* ViewController.swift */,
-				1D04121F28B277040044051D /* Main.storyboard */,
 				1D04122528B277060044051D /* Assets.xcassets */,
-				1D04122728B277060044051D /* LaunchScreen.storyboard */,
 				1D04122A28B277060044051D /* Info.plist */,
 				1D04122228B277040044051D /* TestAppw.xcdatamodeld */,
 			);
@@ -128,6 +141,59 @@
 				1D04123F28B277060044051D /* TestAppwUITestsLaunchTests.swift */,
 			);
 			path = TestAppwUITests;
+			sourceTree = "<group>";
+		};
+		1D04124C28B277E40044051D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		1D04124D28B277EB0044051D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1D04125128B278240044051D /* ViewControllers */,
+				1D04125028B2780C0044051D /* Storyboards */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1D04124E28B277F20044051D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				1D04125628B279750044051D /* MainViewModel.swift */,
+				1D04125828B2798B0044051D /* ProductDetailsViewModel.swift */,
+				1D04125A28B279970044051D /* MyCartViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		1D04124F28B277FD0044051D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1D04125C28B279AA0044051D /* Models.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1D04125028B2780C0044051D /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				1D04121F28B277040044051D /* Main.storyboard */,
+				1D04122728B277060044051D /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		1D04125128B278240044051D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1D04121D28B277040044051D /* MainViewController.swift */,
+				1D04125228B278660044051D /* ProductDetailsViewController.swift */,
+				1D04125428B2787D0044051D /* MyCartViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,7 +276,7 @@
 				};
 			};
 			buildConfigurationList = 1D04121128B277040044051D /* Build configuration list for PBXProject "TestAppw" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -261,10 +327,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D04121E28B277040044051D /* ViewController.swift in Sources */,
+				1D04125728B279750044051D /* MainViewModel.swift in Sources */,
+				1D04121E28B277040044051D /* MainViewController.swift in Sources */,
 				1D04122428B277040044051D /* TestAppw.xcdatamodeld in Sources */,
+				1D04125928B2798B0044051D /* ProductDetailsViewModel.swift in Sources */,
 				1D04121A28B277040044051D /* AppDelegate.swift in Sources */,
+				1D04125328B278660044051D /* ProductDetailsViewController.swift in Sources */,
+				1D04125528B2787D0044051D /* MyCartViewController.swift in Sources */,
 				1D04121C28B277040044051D /* SceneDelegate.swift in Sources */,
+				1D04125B28B279970044051D /* MyCartViewModel.swift in Sources */,
+				1D04125D28B279AA0044051D /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +521,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -477,6 +550,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
