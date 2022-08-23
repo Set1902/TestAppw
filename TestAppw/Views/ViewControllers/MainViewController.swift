@@ -9,8 +9,6 @@ import UIKit
 import Combine
 class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-
-    
     
     
     @IBOutlet weak var Cat: UICollectionView!
@@ -24,7 +22,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     @IBOutlet weak var Label: UILabel!
     
-    
+    private let cat: [String] = ["comp.png", "serd.png", "book.png"]
     private var model = Welcome()
     private let vm = MainViewModel()
     private let input: PassthroughSubject<MainViewModel.Input, Never> = .init()
@@ -83,7 +81,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.Cat {
-            return 5
+            return cat.count
                }
         else if collectionView == self.best {
             return model.homeStore!.count
@@ -93,12 +91,24 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.Cat {
-                    let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-                    // Set up cell
-                    //cellA.lbl.text = labelA[indexPath.row]
+                    let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CatCollectionViewCell
+                    
+        
+            
+            
+            cellA.button.layer.cornerRadius = cellA.button.frame.width / 2
+            cellA.button.layer.masksToBounds = true
+            
+            cellA.button.setImage(UIImage(named:cat[indexPath.item]), for: .normal)
+            cellA.button.contentVerticalAlignment = .fill
+            cellA.button.contentHorizontalAlignment = .fill
+            cellA.button.imageEdgeInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+            
+            //cellA.button.addTarget(self, action: #selector(thumbsUpButtonPressed), for: .touchUpInside)
+            //view.addSubview(cellA.button)
 
             
-                cellA.backgroundColor = .darkGray
+            cellA.backgroundColor = .white
                     return cellA
                 }
 
@@ -123,6 +133,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                     
                     cellB.label.text = model.homeStore![indexPath.item].title
                     cellB.label2.text = model.homeStore![indexPath.item].subtitle
+                    
 
                     return cellB
                 }
@@ -133,19 +144,26 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             cellC.price.text = "$ \(price)"
             cellC.fullPrice.text = "$ \(fullPrice)"
             cellC.name.text = model.bestSeller![indexPath.item].title
+            cellC.button.layer.cornerRadius = cellC.button.frame.width / 2
+            cellC.button.layer.masksToBounds = true
+            cellC.button.setImage(UIImage(named:"like.png"), for: .normal)
+            
+            if model.bestSeller![indexPath.item].isFavorites == true {
+                cellC.button.backgroundColor = .systemOrange
+            }
             let url: String =  model.bestSeller![indexPath.item].picture!
 
             let imageURL = URL(string: url)
 
-            DispatchQueue.global().async {
-                let imageData = try? Data(contentsOf: imageURL!)
+            //DispatchQueue.global().async {
+               // let imageData = try? Data(contentsOf: imageURL!)
                 
-                let image = UIImage(data: imageData!)
+               // let image = UIImage(data: imageData!)
                 
-                DispatchQueue.main.async {
-                    cellC.image102.image = image
-                }
-            }
+               // DispatchQueue.main.async {
+                //    cellC.image102.image = image
+                //}
+           // }
             return cellC
         }
     }

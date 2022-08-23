@@ -19,10 +19,15 @@ class Best2CollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var fullPrice: UILabel!
     
+    @IBOutlet weak var button: UIButton!
+    
     
     @IBAction func likeButtonTapped(_ sender: Any) {
         
         
+            button.backgroundColor = .white
+        
+            
         
         
         
