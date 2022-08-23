@@ -90,10 +90,10 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="odQ-kE-5bS">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" background="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="odQ-kE-5bS">
                                 <rect key="frame" x="16" y="268" width="300" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="MarkPro" family="Mark Pro" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9ku-og-k8e">
@@ -118,10 +118,6 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="356" height="129"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ESd-BM-e36">
-                                                            <rect key="frame" x="98" y="8" width="258" height="132"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NRy-7L-jT5">
                                                             <rect key="frame" x="8" y="28" width="137" height="30"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -144,12 +140,16 @@
                                                                 <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
                                                             </buttonConfiguration>
                                                         </button>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" semanticContentAttribute="playback" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7d4-g7-Sll">
+                                                            <rect key="frame" x="164" y="1" width="192" height="128"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
                                                     </subviews>
                                                 </collectionViewCellContentView>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <size key="customSize" width="356" height="129"/>
                                                 <connections>
-                                                    <outlet property="image101" destination="ESd-BM-e36" id="T4g-GO-JSo"/>
+                                                    <outlet property="image101" destination="7d4-g7-Sll" id="vDi-EQ-YrV"/>
                                                     <outlet property="label" destination="NRy-7L-jT5" id="qQs-S7-dcB"/>
                                                     <outlet property="label2" destination="6ZV-5r-4bl" id="6KV-lG-EID"/>
                                                 </connections>
@@ -199,6 +199,15 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Xl-z7-G6Y">
+                                                            <rect key="frame" x="106" y="8" width="75" height="35"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <state key="normal" title="Button"/>
+                                                            <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                            <connections>
+                                                                <action selector="likeButtonTapped:" destination="02l-Iv-H8k" eventType="touchUpInside" id="eLV-mk-rFa"/>
+                                                            </connections>
+                                                        </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V4p-58-4OT">
                                                             <rect key="frame" x="71" y="184" width="42" height="12"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -380,6 +389,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

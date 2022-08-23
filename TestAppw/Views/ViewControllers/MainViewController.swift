@@ -133,7 +133,19 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             cellC.price.text = "$ \(price)"
             cellC.fullPrice.text = "$ \(fullPrice)"
             cellC.name.text = model.bestSeller![indexPath.item].title
+            let url: String =  model.bestSeller![indexPath.item].picture!
 
+            let imageURL = URL(string: url)
+
+            DispatchQueue.global().async {
+                let imageData = try? Data(contentsOf: imageURL!)
+                
+                let image = UIImage(data: imageData!)
+                
+                DispatchQueue.main.async {
+                    cellC.image102.image = image
+                }
+            }
             return cellC
         }
     }

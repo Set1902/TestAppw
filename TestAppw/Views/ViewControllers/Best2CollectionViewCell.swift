@@ -20,4 +20,13 @@ class Best2CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var fullPrice: UILabel!
     
     
+    @IBAction func likeButtonTapped(_ sender: Any) {
+        
+        
+        
+        
+        
+    }
+    
+    
 }
