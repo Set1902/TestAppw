@@ -26,6 +26,10 @@
 		1D04126328B27B2C0044051D /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D04126228B27B2C0044051D /* DetailModel.swift */; };
 		1D04126528B27C040044051D /* MyCartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D04126428B27C040044051D /* MyCartModel.swift */; };
 		1D04126728B27C630044051D /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D04126628B27C630044051D /* Service.swift */; };
+		1DE93E1028B5326C004A9487 /* HotSalesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE93E0F28B5326C004A9487 /* HotSalesCollectionViewCell.swift */; };
+		1DE93E1228B53741004A9487 /* CatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE93E1128B53741004A9487 /* CatCollectionViewCell.swift */; };
+		1DE93E1428B543C5004A9487 /* Best2CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE93E1328B543C5004A9487 /* Best2CollectionViewCell.swift */; };
+		1DE93E1628B548D4004A9487 /* MarkPro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DE93E1528B548D4004A9487 /* MarkPro.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +73,10 @@
 		1D04126228B27B2C0044051D /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 		1D04126428B27C040044051D /* MyCartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCartModel.swift; sourceTree = "<group>"; };
 		1D04126628B27C630044051D /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		1DE93E0F28B5326C004A9487 /* HotSalesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotSalesCollectionViewCell.swift; sourceTree = "<group>"; };
+		1DE93E1128B53741004A9487 /* CatCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatCollectionViewCell.swift; sourceTree = "<group>"; };
+		1DE93E1328B543C5004A9487 /* Best2CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Best2CollectionViewCell.swift; sourceTree = "<group>"; };
+		1DE93E1528B548D4004A9487 /* MarkPro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MarkPro.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +127,7 @@
 		1D04121828B277040044051D /* TestAppw */ = {
 			isa = PBXGroup;
 			children = (
+				1DE93E1528B548D4004A9487 /* MarkPro.ttf */,
 				1D04124F28B277FD0044051D /* Models */,
 				1D04124E28B277F20044051D /* ViewModels */,
 				1D04124D28B277EB0044051D /* Views */,
@@ -201,6 +210,9 @@
 				1D04121D28B277040044051D /* MainViewController.swift */,
 				1D04125228B278660044051D /* ProductDetailsViewController.swift */,
 				1D04125428B2787D0044051D /* MyCartViewController.swift */,
+				1DE93E0F28B5326C004A9487 /* HotSalesCollectionViewCell.swift */,
+				1DE93E1128B53741004A9487 /* CatCollectionViewCell.swift */,
+				1DE93E1328B543C5004A9487 /* Best2CollectionViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -309,6 +321,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DE93E1628B548D4004A9487 /* MarkPro.ttf in Resources */,
 				1D04122928B277060044051D /* LaunchScreen.storyboard in Resources */,
 				1D04122628B277060044051D /* Assets.xcassets in Resources */,
 				1D04122128B277040044051D /* Main.storyboard in Resources */,
@@ -336,8 +349,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DE93E1228B53741004A9487 /* CatCollectionViewCell.swift in Sources */,
 				1D04125728B279750044051D /* MainViewModel.swift in Sources */,
 				1D04126728B27C630044051D /* Service.swift in Sources */,
+				1DE93E1028B5326C004A9487 /* HotSalesCollectionViewCell.swift in Sources */,
 				1D04121E28B277040044051D /* MainViewController.swift in Sources */,
 				1D04122428B277040044051D /* TestAppw.xcdatamodeld in Sources */,
 				1D04125928B2798B0044051D /* ProductDetailsViewModel.swift in Sources */,
@@ -349,6 +364,7 @@
 				1D04126528B27C040044051D /* MyCartModel.swift in Sources */,
 				1D04126328B27B2C0044051D /* DetailModel.swift in Sources */,
 				1D04125B28B279970044051D /* MyCartViewModel.swift in Sources */,
+				1DE93E1428B543C5004A9487 /* Best2CollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
