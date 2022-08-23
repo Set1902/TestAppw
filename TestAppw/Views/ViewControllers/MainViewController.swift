@@ -156,15 +156,15 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
             let imageURL = URL(string: url)
 
-            //DispatchQueue.global().async {
-               //let imageData = try? Data(contentsOf: imageURL!)
+            DispatchQueue.global().async {
+               let imageData = try? Data(contentsOf: imageURL!)
                 
-               // let image = UIImage(data: imageData!)
+                let image = UIImage(data: imageData!)
                 
-                //DispatchQueue.main.async {
-              //      cellC.image102.image = image
-              //  }
-          //  }
+                DispatchQueue.main.async {
+                    cellC.image102.image = image
+                }
+            }
             return cellC
         }
     }
