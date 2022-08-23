@@ -10,6 +10,7 @@ import Combine
 class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     
+    @IBOutlet weak var scroller: UIScrollView!
     
     @IBOutlet weak var Cat: UICollectionView!
     
@@ -65,9 +66,9 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         best.delegate = self
         best2.dataSource = self
         best2.delegate = self
+        
         self.model = model
-        
-        
+
         self.Cat.reloadData()
         self.best.reloadData()
         self.best2.reloadData()
@@ -91,32 +92,31 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.Cat {
-                    let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CatCollectionViewCell
-                    
-        
+            let layout = UICollectionViewFlowLayout()
+            //layout.scrollDirection = .horizontal
+            layout.sectionInset = UIEdgeInsets(top: 24, left: 0, bottom: 57, right: 0)
             
+            layout.minimumInteritemSpacing = 23
             
-            cellA.button.layer.cornerRadius = cellA.button.frame.width / 2
-            cellA.button.layer.masksToBounds = true
+            Cat.collectionViewLayout = layout
+            let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CatCollectionViewCell
             
             cellA.button.setImage(UIImage(named:cat[indexPath.item]), for: .normal)
             cellA.button.contentVerticalAlignment = .fill
             cellA.button.contentHorizontalAlignment = .fill
             cellA.button.imageEdgeInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
-            
-            //cellA.button.addTarget(self, action: #selector(thumbsUpButtonPressed), for: .touchUpInside)
-            //view.addSubview(cellA.button)
-
-            
             cellA.backgroundColor = .white
-                    return cellA
+            return cellA
                 }
 
                 else if collectionView == self.best{
+                    
                     let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: "cell2", for: indexPath) as! HotSalesCollectionViewCell
-                    // ...Set up cell
-                   // cellB.lbl.text = labelB[indexPath.row]
                     cellB.backgroundColor = .black
+                                        
+                    
+    
+                    
                     let url: String =  model.homeStore![indexPath.item].picture!
 
                     let imageURL = URL(string: url)
@@ -138,6 +138,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                     return cellB
                 }
         else {
+            
             let cellC = collectionView.dequeueReusableCell(withReuseIdentifier: "cell3", for: indexPath) as! Best2CollectionViewCell
             let price: String = String(model.bestSeller![indexPath.item].priceWithoutDiscount!)
             let fullPrice: String = String(model.bestSeller![indexPath.item].discountPrice!)
@@ -156,14 +157,14 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             let imageURL = URL(string: url)
 
             //DispatchQueue.global().async {
-               // let imageData = try? Data(contentsOf: imageURL!)
+               //let imageData = try? Data(contentsOf: imageURL!)
                 
                // let image = UIImage(data: imageData!)
                 
-               // DispatchQueue.main.async {
-                //    cellC.image102.image = image
-                //}
-           // }
+                //DispatchQueue.main.async {
+              //      cellC.image102.image = image
+              //  }
+          //  }
             return cellC
         }
     }
@@ -173,12 +174,17 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
 extension MainViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == self.best {
-            return CGSize(width: 375, height: 199)
+        
+            return CGSize(width: 350, height: 199)
         } else if collectionView == self.best2 {
+            
             return CGSize(width: 181, height: 227)
+        } else if collectionView == self.Cat {
+            
+            return CGSize(width: 71, height: 71)
         }
-        return CGSize(width: collectionView.frame.size.width/3.0 - 8,
-                              height: collectionView.frame.size.width/3.0 - 8)
+        return CGSize(width: 71, height: 71)
     }
+    
 }
 

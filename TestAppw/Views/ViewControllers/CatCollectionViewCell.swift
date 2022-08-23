@@ -12,6 +12,14 @@ class CatCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var button: UIButton!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        button.backgroundColor = .systemOrange
+        button.layer.cornerRadius = button.frame.width / 2
+        button.layer.masksToBounds = true
+    
+    }
+
     
     
     
