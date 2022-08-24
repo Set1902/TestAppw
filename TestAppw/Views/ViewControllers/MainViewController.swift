@@ -7,19 +7,22 @@
 
 import UIKit
 import Combine
-class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
     
     
     @IBOutlet weak var scroller: UIScrollView!
     
     @IBOutlet weak var Cat: UICollectionView!
     
+    @IBOutlet weak var bestCeller: UILabel!
     
     @IBOutlet weak var best: UICollectionView!
     
+    @IBOutlet weak var button: UIButton!
     
     @IBOutlet weak var best2: UICollectionView!
     
+    @IBOutlet weak var filter: UIButton!
     
     @IBOutlet weak var Label: UILabel!
     
@@ -33,7 +36,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
         bind()
         input.send(.viewDidLoad)
     }
@@ -156,18 +158,39 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
             let imageURL = URL(string: url)
 
-            DispatchQueue.global().async {
-               let imageData = try? Data(contentsOf: imageURL!)
+            //DispatchQueue.global().async {
+              // let imageData = try? Data(contentsOf: imageURL!)
                 
-                let image = UIImage(data: imageData!)
+               // let image = UIImage(data: imageData!)
                 
-                DispatchQueue.main.async {
-                    cellC.image102.image = image
-                }
-            }
+               // DispatchQueue.main.async {
+               //     cellC.image102.image = image
+               // }
+           // }
             return cellC
         }
     }
+    
+    
+    @IBAction func buttonTapped(_ sender: Any) {
+        
+        
+        
+        
+        
+    }
+    
+    @IBAction func filterTapped(_ sender: Any) {
+        
+        
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let sheetPC = self.storyboard?.instantiateViewController(withIdentifier: "SheetVC") as! SheetViewController
+        self.present(sheetPC, animated: true, completion: nil)
+        
+    }
+    
 }
 
 
@@ -175,7 +198,7 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == self.best {
         
-            return CGSize(width: 350, height: 199)
+            return CGSize(width: 350, height: 150)
         } else if collectionView == self.best2 {
             
             return CGSize(width: 181, height: 227)

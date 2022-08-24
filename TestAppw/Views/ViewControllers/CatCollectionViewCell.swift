@@ -21,6 +21,11 @@ class CatCollectionViewCell: UICollectionViewCell {
     }
 
     
+    @IBAction func buttonTapped(_ sender: Any) {
+        
+        button.backgroundColor = .white
+        
+    }
     
     
     
