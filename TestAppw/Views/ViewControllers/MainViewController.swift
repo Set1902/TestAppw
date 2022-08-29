@@ -83,8 +83,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         Cat.delegate = self
         best.dataSource = self
         best.delegate = self
-        //best2.dataSource = self
-        //best2.delegate = self
+        best2.dataSource = self
+        best2.delegate = self
         
         
         
@@ -93,7 +93,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
         self.Cat.reloadData()
         self.best.reloadData()
-        //self.best2.reloadData()
+        self.best2.reloadData()
         
         
         
@@ -164,7 +164,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             cellC.button.setImage(UIImage(named:"like.png"), for: .normal)
             
             if model.bestSeller![indexPath.item].isFavorites == true {
-                //cellC.button.backgroundColor = .systemOrange
+                cellC.button.backgroundColor = .systemOrange
             }
             let url: String =  model.bestSeller![indexPath.item].picture!
 
