@@ -10,7 +10,10 @@ import UIKit
 class CatCollectionViewCell: UICollectionViewCell {
     
     
+    @IBOutlet weak var label: UILabel!
+    
     @IBOutlet weak var button: UIButton!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

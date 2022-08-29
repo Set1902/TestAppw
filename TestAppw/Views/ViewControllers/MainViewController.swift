@@ -9,8 +9,9 @@ import UIKit
 import Combine
 class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
     
+    @IBOutlet weak var searchw: UITextField!
     
-    @IBOutlet weak var scroller: UIScrollView!
+
     
     @IBOutlet weak var Cat: UICollectionView!
     
@@ -24,6 +25,13 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     @IBOutlet weak var filter: UIButton!
     
+    
+    @IBOutlet weak var hotSales: UILabel!
+    
+    
+    
+    
+    @IBOutlet weak var topLabel: UILabel!
     @IBOutlet weak var Label: UILabel!
     
     private let cat: [String] = ["comp.png", "serd.png", "book.png"]
@@ -35,7 +43,16 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        // Do any additional setup after loading the view
+
+        
+       // best.frame = CGRect(x: 15, y: 382, width: 363, height: 182)
+        best.layer.cornerRadius = 20
+       // best2.frame = CGRect(x: 14, y: 625, width: 380, height: 300)
+       // best2.layer.shadowRadius = 10
+        
+       
+        
         bind()
         input.send(.viewDidLoad)
     }
@@ -66,14 +83,20 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         Cat.delegate = self
         best.dataSource = self
         best.delegate = self
-        best2.dataSource = self
-        best2.delegate = self
+        //best2.dataSource = self
+        //best2.delegate = self
+        
+        
+        
         
         self.model = model
 
         self.Cat.reloadData()
         self.best.reloadData()
-        self.best2.reloadData()
+        //self.best2.reloadData()
+        
+        
+        
         
     }
 
@@ -94,30 +117,17 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.Cat {
-            let layout = UICollectionViewFlowLayout()
-            //layout.scrollDirection = .horizontal
-            layout.sectionInset = UIEdgeInsets(top: 24, left: 0, bottom: 57, right: 0)
-            
-            layout.minimumInteritemSpacing = 23
-            
-            Cat.collectionViewLayout = layout
-            let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CatCollectionViewCell
-            
-            cellA.button.setImage(UIImage(named:cat[indexPath.item]), for: .normal)
-            cellA.button.contentVerticalAlignment = .fill
-            cellA.button.contentHorizontalAlignment = .fill
-            cellA.button.imageEdgeInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+            let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) 
             cellA.backgroundColor = .white
             return cellA
                 }
 
                 else if collectionView == self.best{
                     
+                    
                     let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: "cell2", for: indexPath) as! HotSalesCollectionViewCell
                     cellB.backgroundColor = .black
                                         
-                    
-    
                     
                     let url: String =  model.homeStore![indexPath.item].picture!
 
@@ -132,11 +142,13 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                             cellB.image101.image = image
                         }
                     }
-                    
-                    cellB.label.text = model.homeStore![indexPath.item].title
-                    cellB.label2.text = model.homeStore![indexPath.item].subtitle
+                    //cellB.label.textColor = .white
+                    //cellB.label2.textColor = .white
+                    //cellB.label.text = model.homeStore![indexPath.item].title
+                    //cellB.label2.text = model.homeStore![indexPath.item].subtitle
                     
 
+                    //cellB.layer.frame = CGRect(x: 0, y: 0, width: 363, height: 182)
                     return cellB
                 }
         else {
@@ -152,21 +164,21 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             cellC.button.setImage(UIImage(named:"like.png"), for: .normal)
             
             if model.bestSeller![indexPath.item].isFavorites == true {
-                cellC.button.backgroundColor = .systemOrange
+                //cellC.button.backgroundColor = .systemOrange
             }
             let url: String =  model.bestSeller![indexPath.item].picture!
 
             let imageURL = URL(string: url)
 
-            //DispatchQueue.global().async {
-              // let imageData = try? Data(contentsOf: imageURL!)
+            DispatchQueue.global().async {
+               let imageData = try? Data(contentsOf: imageURL!)
                 
-               // let image = UIImage(data: imageData!)
+            let image = UIImage(data: imageData!)
                 
-               // DispatchQueue.main.async {
-               //     cellC.image102.image = image
-               // }
-           // }
+                DispatchQueue.main.async {
+                    cellC.image102.image = image
+                }
+            }
             return cellC
         }
     }
@@ -182,32 +194,18 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     @IBAction func filterTapped(_ sender: Any) {
         
-        
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        let sheetPC = self.storyboard?.instantiateViewController(withIdentifier: "SheetVC") as! SheetViewController
-        self.present(sheetPC, animated: true, completion: nil)
+    
+        showFilter()
         
     }
     
-}
-
-
-extension MainViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if collectionView == self.best {
+    private func showFilter() {
         
-            return CGSize(width: 350, height: 150)
-        } else if collectionView == self.best2 {
-            
-            return CGSize(width: 181, height: 227)
-        } else if collectionView == self.Cat {
-            
-            return CGSize(width: 71, height: 71)
-        }
-        return CGSize(width: 71, height: 71)
+        
+        
     }
     
+    
 }
+
 
