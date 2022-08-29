@@ -26,6 +26,9 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var filter: UIButton!
     
     
+    @IBOutlet weak var filtercollect: UICollectionView!
+    
+    
     @IBOutlet weak var hotSales: UILabel!
     
     
@@ -45,7 +48,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         super.viewDidLoad()
         // Do any additional setup after loading the view
 
-        
+        filtercollect.isHidden = true
        // best.frame = CGRect(x: 15, y: 382, width: 363, height: 182)
         best.layer.cornerRadius = 20
        // best2.frame = CGRect(x: 14, y: 625, width: 380, height: 300)
@@ -85,7 +88,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         best.delegate = self
         best2.dataSource = self
         best2.delegate = self
-        
+        filtercollect.dataSource = self
+        filtercollect.delegate = self
         
         
         
@@ -94,13 +98,17 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         self.Cat.reloadData()
         self.best.reloadData()
         self.best2.reloadData()
-        
+        self.filtercollect.reloadData()
         
         
         
     }
 
     @IBAction func ButtonTapped(_ sender: Any) {
+        
+        best2.isHidden = true
+        filtercollect.isHidden = false
+        
     }
     
     
@@ -111,6 +119,9 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                }
         else if collectionView == self.best {
             return model.homeStore!.count
+        }
+        else if collectionView == self.filtercollect {
+            return 1
         }
         return model.bestSeller!.count
     }
@@ -151,6 +162,11 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                     //cellB.layer.frame = CGRect(x: 0, y: 0, width: 363, height: 182)
                     return cellB
                 }
+        else if collectionView == self.filtercollect{
+            let cellD = collectionView.dequeueReusableCell(withReuseIdentifier: "cell4", for: indexPath)
+            cellD.backgroundColor = .black
+            return cellD
+        }
         else {
             
             let cellC = collectionView.dequeueReusableCell(withReuseIdentifier: "cell3", for: indexPath) as! Best2CollectionViewCell
