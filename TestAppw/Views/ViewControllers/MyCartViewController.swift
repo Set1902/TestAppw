@@ -8,8 +8,13 @@
 import UIKit
 import Combine
 
-class MyCartViewController: UIViewController {
+class MyCartViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    @IBOutlet weak var checkoutButton: UIButton!
+    
+    @IBOutlet weak var finalPricee: UILabel!
+    
+    @IBOutlet weak var cart: UICollectionView!
     
     @IBOutlet weak var Label: UILabel!
     
@@ -34,12 +39,59 @@ class MyCartViewController: UIViewController {
           .sink { [weak self] event in
           switch event {
           case .fetchMyCartDidSucceed(let cart):
-            print("hi")
-              //self?.Label.text = cart.basket![0].title
+              self?.updateUI(with: cart)
           case .fetchMyCartDidFail(let error):
               print(error)
           }
         }.store(in: &cancellables)
         
     }
+    
+    private func updateUI(with mycart: MyCart) {
+        cart.dataSource = self
+        cart.delegate = self
+        
+        self.myCart = mycart
+        updateFinalPrice()
+    }
+    
+    private func updateFinalPrice() {
+        finalPricee.text = "$\(myCart.total!) us"
+        Label.text = myCart.delivery!
+        
+        checkoutButton.layer.cornerRadius = 10
+        checkoutButton.backgroundColor = .orange
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return myCart.basket!.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: "cell7", for: indexPath) as! CartCollectionViewCell
+        cellA.backgroundColor = .systemPink
+        cellA.nameLabel.text = myCart.basket![indexPath.item].title!
+        let pp: String = String(myCart.basket![indexPath.item].price!)
+        cellA.priceLabel.text = "$\(pp)"
+        
+        let url: String = myCart.basket![indexPath.item].images!
+
+        let imageURL = URL(string: url)
+
+        DispatchQueue.global().async {
+            let imageData = try? Data(contentsOf: imageURL!)
+            
+            let image = UIImage(data: imageData!)
+            
+            DispatchQueue.main.async {
+                cellA.image104.image = image
+            }
+        }
+        
+        return cellA
+    }
+    
+    
+    
+    
 }
