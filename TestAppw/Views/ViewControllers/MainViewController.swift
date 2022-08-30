@@ -176,11 +176,12 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             cellC.fullPrice.text = "$ \(fullPrice)"
             cellC.name.text = model.bestSeller![indexPath.item].title
             cellC.button.layer.cornerRadius = cellC.button.frame.width / 2
-            cellC.button.layer.masksToBounds = true
+
+            cellC.button.backgroundColor = .white
             cellC.button.setImage(UIImage(named:"like.png"), for: .normal)
             
             if model.bestSeller![indexPath.item].isFavorites == true {
-                cellC.button.backgroundColor = .systemOrange
+                cellC.button.setImage(UIImage(named:"like2.png"), for: .normal)
             }
             let url: String =  model.bestSeller![indexPath.item].picture!
 

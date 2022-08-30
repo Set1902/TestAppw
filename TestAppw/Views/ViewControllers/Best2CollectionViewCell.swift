@@ -26,7 +26,7 @@ class Best2CollectionViewCell: UICollectionViewCell {
         
         
            // button.backgroundColor = .white
-        button.setImage(UIImage(named:"like2.png"), for: .normal)
+        button.setImage(UIImage(named:"like.png"), for: .normal)
         
             
         
