@@ -34,7 +34,8 @@ class MyCartViewController: UIViewController {
           .sink { [weak self] event in
           switch event {
           case .fetchMyCartDidSucceed(let cart):
-              self?.Label.text = cart.basket![0].title
+            print("hi")
+              //self?.Label.text = cart.basket![0].title
           case .fetchMyCartDidFail(let error):
               print(error)
           }

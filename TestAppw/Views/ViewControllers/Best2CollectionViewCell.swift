@@ -25,7 +25,8 @@ class Best2CollectionViewCell: UICollectionViewCell {
     @IBAction func likeButtonTapped(_ sender: Any) {
         
         
-            button.backgroundColor = .white
+           // button.backgroundColor = .white
+        button.setImage(UIImage(named:"like2.png"), for: .normal)
         
             
         

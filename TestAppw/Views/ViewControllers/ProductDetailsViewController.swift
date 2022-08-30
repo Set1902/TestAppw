@@ -9,8 +9,10 @@ import UIKit
 import Combine
 class ProductDetailsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    @IBOutlet weak var backButton: UIButton!
     
-
+    @IBOutlet weak var imagecur: UICollectionView!
+    
     
     @IBOutlet weak var detaildd: UICollectionView!
     
@@ -26,10 +28,8 @@ class ProductDetailsViewController: UIViewController, UICollectionViewDelegate, 
         super.viewDidLoad()
 
         // Do any additional setup after loading the view
+        backButton.layer.cornerRadius = 10
         
-        detaildd.delegate = self
-        detaildd.dataSource = self
-        detaildd.backgroundColor = .systemPink
         
         
         bind()
@@ -44,7 +44,7 @@ class ProductDetailsViewController: UIViewController, UICollectionViewDelegate, 
           .sink { [weak self] event in
           switch event {
           case .fetchProductDetailDidSucceed(let detail):
-              print("hi")
+              self?.updateUI(with: detail)
           case .fetchProductDetailDidFail(let error):
               print(error)
           }
@@ -53,15 +53,68 @@ class ProductDetailsViewController: UIViewController, UICollectionViewDelegate, 
     }
     
     
+    func updateUI(with detail: Details){
+        detaildd.delegate = self
+        detaildd.dataSource = self
+        detaildd.backgroundColor = .systemPink
+        detaildd.layer.cornerRadius = 30
+        imagecur.delegate = self
+        imagecur.dataSource = self
+        self.detail = detail
+        
+        
+        
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if collectionView == self.imagecur {
+            return detail.images!.count
+        }
         return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: "detcell", for: indexPath) as! ProdDetCollectionViewCell
-       // cellA.label.text = "hi"
-        //cellA.label2.text = "hello"
-        return cellA
+        
+        if collectionView == self.imagecur {
+            let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: "cell6", for: indexPath) as! detailCollectionViewCell
+            
+            let url: String =  detail.images![indexPath.item]
+
+            let imageURL = URL(string: url)
+
+            DispatchQueue.global().async {
+               let imageData = try? Data(contentsOf: imageURL!)
+                
+            let image = UIImage(data: imageData!)
+                
+                DispatchQueue.main.async {
+                    cellB.image103.image = image
+                }
+            }
+            
+            return cellB
+        } else {
+            let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: "detcell", for: indexPath) as! ProdDetCollectionViewCell
+            cellA.label.text = detail.title!
+            cellA.button.backgroundColor = .orange
+            cellA.button.layer.cornerRadius = 10
+            cellA.label2.text = detail.cpu!
+            cellA.label3.text = detail.camera!
+            cellA.label4.text = detail.sd!
+            cellA.label5.text = detail.ssd!
+            cellA.button.setTitle("Add to Cart  $\(detail.price!)", for: .normal)
+            return cellA
+        }
+        
+        
+    }
+    
+}
+
+
+extension ProductDetailsViewController {
+    @IBAction func unwindToDetails(unwindSegue: UIStoryboardSegue) {
+        
     }
     
 }
