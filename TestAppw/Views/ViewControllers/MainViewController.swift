@@ -12,6 +12,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var searchw: UITextField!
     
 
+    @IBOutlet weak var qrButton: UIButton!
     
     @IBOutlet weak var Cat: UICollectionView!
     
@@ -48,11 +49,9 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         super.viewDidLoad()
         // Do any additional setup after loading the view
 
+        qrButton.layer.cornerRadius = 8
         filtercollect.isHidden = true
-       // best.frame = CGRect(x: 15, y: 382, width: 363, height: 182)
         best.layer.cornerRadius = 20
-       // best2.frame = CGRect(x: 14, y: 625, width: 380, height: 300)
-       // best2.layer.shadowRadius = 10
         
        
         
