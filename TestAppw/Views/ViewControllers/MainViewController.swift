@@ -104,8 +104,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
 
     @IBAction func ButtonTapped(_ sender: Any) {
-        
-        best2.isHidden = true
         filtercollect.isHidden = false
         
     }
