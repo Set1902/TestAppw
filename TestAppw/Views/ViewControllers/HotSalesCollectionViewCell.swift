@@ -17,5 +17,6 @@ class HotSalesCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var label2: UILabel!
     
+    @IBOutlet weak var buyNowButton: UIButton!
     
 }

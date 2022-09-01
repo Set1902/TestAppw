@@ -41,12 +41,12 @@ class Tabb: UITabBarController {
         
         private func setupTabBarUI() {
             // Setup your colors and corner radius
-            self.tabBar.backgroundColor = UIColor.blue
+            self.tabBar.backgroundColor = UIColor.white
             self.tabBar.layer.cornerRadius = 30
             self.tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-            self.tabBar.backgroundColor = .blue
-            self.tabBar.tintColor = .black
-            self.tabBar.unselectedItemTintColor = UIColor.black
+            self.tabBar.backgroundColor = .white
+            self.tabBar.tintColor = .white
+            self.tabBar.unselectedItemTintColor = .white
             
             // Remove the line
             if #available(iOS 13.0, *) {

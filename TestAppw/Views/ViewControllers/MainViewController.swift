@@ -104,6 +104,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
 
     @IBAction func ButtonTapped(_ sender: Any) {
+        self.tabBarController?.tabBar.isHidden = true
         filtercollect.isHidden = false
         
     }
@@ -150,10 +151,12 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                             cellB.image101.image = image
                         }
                     }
-                    //cellB.label.textColor = .white
-                    //cellB.label2.textColor = .white
-                    //cellB.label.text = model.homeStore![indexPath.item].title
-                    //cellB.label2.text = model.homeStore![indexPath.item].subtitle
+                    cellB.label.textColor = .white
+                    cellB.label2.textColor = .white
+                    cellB.label.text = model.homeStore![indexPath.item].title
+                    cellB.label2.text = model.homeStore![indexPath.item].subtitle
+                    cellB.buyNowButton.layer.cornerRadius = 5
+                    cellB.buyNowButton.backgroundColor = .white
                     
 
                     //cellB.layer.frame = CGRect(x: 0, y: 0, width: 363, height: 182)
@@ -209,7 +212,9 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBAction func filterTapped(_ sender: Any) {
         
     
+        
         showFilter()
+        
         
     }
     
