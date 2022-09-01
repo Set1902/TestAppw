@@ -16,32 +16,24 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     @IBOutlet weak var Cat: UICollectionView!
     
-    @IBOutlet weak var bestCeller: UILabel!
+
     
     @IBOutlet weak var best: UICollectionView!
     
-    @IBOutlet weak var button: UIButton!
+ 
     
     @IBOutlet weak var best2: UICollectionView!
     
-    @IBOutlet weak var filter: UIButton!
-    
-    
-    @IBOutlet weak var filtercollect: UICollectionView!
-    
-    
+
     @IBOutlet weak var hotSales: UILabel!
-    
-    
-    @IBOutlet weak var filterww: UILabel!
-    
     
     @IBOutlet weak var topLabel: UILabel!
     @IBOutlet weak var Label: UILabel!
     var previousSelected : IndexPath?
     var currentSelected : Int?
     
-    private let cat: [String] = ["comp.png", "serd.png", "book.png"]
+    private let cat: [String] = ["phone.phg","comp.png", "serd.png", "book.png"]
+    private let catt: [String] = ["Phones", "Computer", "Health", "Books"]
     private var model = Welcome()
     private let vm = MainViewModel()
     private let input: PassthroughSubject<MainViewModel.Input, Never> = .init()
@@ -115,22 +107,23 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.Cat {
-            return cat.count + 1
+            return cat.count
                }
         else if collectionView == self.best {
             return model.homeStore!.count
-        }
-        else if collectionView == self.filtercollect {
-            return 1
         }
         return model.bestSeller!.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.Cat {
-                    let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CatCollectionViewCell
-            
-            cellA.imgLabel.addImageWith(name: cat[0], behindText: false)
+            let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CatCollectionViewCell
+            if indexPath.item == 0 {
+                cellA.label.textColor = .orange
+                cellA.imgLabel.backgroundColor = .orange
+            }
+            cellA.imgLabel.addImageWith(name: cat[indexPath.item], behindText: false)
+            cellA.label.text = catt[indexPath.item]
                     return cellA
                         }
 

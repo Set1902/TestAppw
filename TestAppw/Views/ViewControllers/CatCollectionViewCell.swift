@@ -27,7 +27,6 @@ class CatCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        //button.backgroundColor = .systemOrange
         imgLabel.layer.cornerRadius = imgLabel.frame.width / 2
         imgLabel.layer.masksToBounds = true
         
