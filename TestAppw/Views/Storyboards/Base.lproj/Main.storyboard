@@ -251,78 +251,9 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="Vector"/>
                                 <connections>
-                                    <action selector="ButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xt4-m7-qgo"/>
+                                    <action selector="filterButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lEn-bi-1HQ"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="IV5-v2-G93">
-                                <rect key="frame" x="0.0" y="576" width="428" height="267"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EkR-gI-lHx">
-                                    <size key="itemSize" width="417" height="267"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell4" id="wb7-fy-LQR" customClass="FilterCollectionViewCell" customModule="TestAppw" customModuleProvider="target">
-                                        <rect key="frame" x="5.666666666666667" y="0.0" width="417" height="267"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QP3-5f-v2g">
-                                            <rect key="frame" x="0.0" y="0.0" width="417" height="267"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XHS-5v-XRy">
-                                                    <rect key="frame" x="116" y="63" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8a5-nR-hSM">
-                                                    <rect key="frame" x="116" y="126" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="26w-tT-ah1">
-                                                    <rect key="frame" x="116" y="143" width="97" height="34"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dv0-sM-fY5">
-                                                    <rect key="frame" x="116" y="203" width="97" height="34"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HwV-rk-S0G">
-                                                    <rect key="frame" x="0.0" y="0.0" width="75" height="35"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                                    <connections>
-                                                        <segue destination="URO-QH-n8j" kind="unwind" unwindAction="unwindToMainWithUnwindSegue:" id="Qaq-D1-133"/>
-                                                    </connections>
-                                                </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kkv-z3-GId">
-                                                    <rect key="frame" x="116" y="185" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </collectionViewCellContentView>
-                                        <size key="customSize" width="417" height="267"/>
-                                        <connections>
-                                            <outlet property="exitButtonTapped" destination="HwV-rk-S0G" id="cHp-Si-zBY"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAR-E3-UBs">
                                 <rect key="frame" x="371" y="287" width="40" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -341,8 +272,6 @@
                         <outlet property="Label" destination="0ct-kK-YtW" id="o3F-Nn-SeL"/>
                         <outlet property="best" destination="ZcY-PA-dvG" id="aEa-Ar-dHA"/>
                         <outlet property="best2" destination="COd-H6-2qh" id="eIG-Bj-bCe"/>
-                        <outlet property="filter" destination="5QJ-x9-UDz" id="u6n-ty-ixT"/>
-                        <outlet property="filtercollect" destination="IV5-v2-G93" id="vdO-fp-e5H"/>
                         <outlet property="hotSales" destination="yNB-7n-aXa" id="a44-UW-RYr"/>
                         <outlet property="qrButton" destination="ZAR-E3-UBs" id="qSb-xQ-YNU"/>
                         <outlet property="searchw" destination="odQ-kE-5bS" id="qy0-tb-X4h"/>
@@ -350,7 +279,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <exit id="URO-QH-n8j" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1872.8971962616822" y="3.2397408207343417"/>
         </scene>
@@ -491,13 +419,20 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <segue destination="Pih-IX-9ge" kind="unwind" unwindAction="unwindToMainWithUnwindSegue:" id="uhe-YG-5LH"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xbC-kA-0f3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="button" destination="qh0-XP-g3m" id="Pbt-LD-UCL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q4x-0a-5OS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Pih-IX-9ge" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1884.6153846153845" y="710.18957345971558"/>
         </scene>
@@ -998,7 +933,7 @@
         <!--Tabb-->
         <scene sceneID="aMJ-gQ-6M2">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="d0W-QS-Qlw" customClass="Tabb" customModule="TestAppw" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="d0W-QS-Qlw" customClass="Tabb" customModule="TestAppw" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qLo-Yy-1gV">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

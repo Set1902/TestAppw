@@ -33,6 +33,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var hotSales: UILabel!
     
     
+    @IBOutlet weak var filterww: UILabel!
     
     
     @IBOutlet weak var topLabel: UILabel!
@@ -52,7 +53,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         // Do any additional setup after loading the view
 
         qrButton.layer.cornerRadius = 8
-        filtercollect.isHidden = true
+        //filterww.isHidden = true
         best.layer.cornerRadius = 20
         
        
@@ -89,8 +90,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         best.delegate = self
         best2.dataSource = self
         best2.delegate = self
-        filtercollect.dataSource = self
-        filtercollect.delegate = self
         
         
         
@@ -99,7 +98,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         self.Cat.reloadData()
         self.best.reloadData()
         self.best2.reloadData()
-        self.filtercollect.reloadData()
         
         
         
@@ -107,7 +105,9 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
     @IBAction func ButtonTapped(_ sender: Any) {
         self.tabBarController?.tabBar.isHidden = true
-        filtercollect.isHidden = false
+        //filterww.isHidden = false
+        //filterww.layer.cornerRadius = 30
+        //filterww.layer.masksToBounds = true
         
     }
     
@@ -162,11 +162,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                     cellB.buyNowButton.backgroundColor = .white
                     return cellB
                 }
-        else if collectionView == self.filtercollect{
-            let cellD = collectionView.dequeueReusableCell(withReuseIdentifier: "cell4", for: indexPath)
-            cellD.backgroundColor = .black
-            return cellD
-        }
+        
         else {
             
             let cellC = collectionView.dequeueReusableCell(withReuseIdentifier: "cell3", for: indexPath) as! Best2CollectionViewCell
@@ -201,12 +197,25 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     
+    @IBAction func filterButtonTapped(_ sender: Any) {
+        
+        let sheetViewController = SheetViewController(nibName: nil, bundle: nil)
+                
+                // Present it w/o any adjustments so it uses the default sheet presentation.
+                present(sheetViewController, animated: true, completion: nil)
+        
+    }
+    
+    
+    
+    
+    
 }
 
 extension MainViewController {
     
     @IBAction func unwindToMain(unwindSegue: UIStoryboardSegue) {
-        filtercollect.isHidden = true
+
     }
     
 }
