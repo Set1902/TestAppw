@@ -58,7 +58,7 @@ class MyCartViewController: UIViewController, UICollectionViewDelegate, UICollec
         cart.dataSource = self
         cart.delegate = self
         cart.layer.cornerRadius = 30
-        cart.backgroundColor = .systemBlue
+        //cart.backgroundColor = .systemBlue
         
         self.myCart = mycart
         updateFinalPrice()
@@ -96,6 +96,8 @@ class MyCartViewController: UIViewController, UICollectionViewDelegate, UICollec
                 cellA.image104.image = image
             }
         }
+        
+        cellA.image104.layer.cornerRadius = 10
         
         return cellA
     }
