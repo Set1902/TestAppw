@@ -37,6 +37,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     @IBOutlet weak var topLabel: UILabel!
     @IBOutlet weak var Label: UILabel!
+    var previousSelected : IndexPath?
+    var currentSelected : Int?
     
     private let cat: [String] = ["comp.png", "serd.png", "book.png"]
     private var model = Welcome()
@@ -113,7 +115,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.Cat {
-            return cat.count
+            return cat.count + 1
                }
         else if collectionView == self.best {
             return model.homeStore!.count
@@ -126,12 +128,13 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.Cat {
-            let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) 
-            cellA.backgroundColor = .white
-            return cellA
-                }
+                    let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CatCollectionViewCell
+            
+            cellA.imgLabel.addImageWith(name: cat[0], behindText: false)
+                    return cellA
+                        }
 
-                else if collectionView == self.best{
+                        else if collectionView == self.best{
                     
                     
                     let cellB = collectionView.dequeueReusableCell(withReuseIdentifier: "cell2", for: indexPath) as! HotSalesCollectionViewCell
@@ -157,9 +160,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                     cellB.label2.text = model.homeStore![indexPath.item].subtitle
                     cellB.buyNowButton.layer.cornerRadius = 5
                     cellB.buyNowButton.backgroundColor = .white
-                    
-
-                    //cellB.layer.frame = CGRect(x: 0, y: 0, width: 363, height: 182)
                     return cellB
                 }
         else if collectionView == self.filtercollect{
@@ -201,30 +201,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     
-    @IBAction func buttonTapped(_ sender: Any) {
-        
-        
-        
-        
-        
-    }
-    
-    @IBAction func filterTapped(_ sender: Any) {
-        
-    
-        
-        showFilter()
-        
-        
-    }
-    
-    private func showFilter() {
-        
-        
-        
-    }
-    
-    
 }
 
 extension MainViewController {
@@ -233,6 +209,31 @@ extension MainViewController {
         
     }
     
+}
+
+extension UILabel {
+
+    func addImageWith(name: String, behindText: Bool) {
+
+        let attachment = NSTextAttachment()
+        attachment.image = UIImage(named: name)
+        let attachmentString = NSAttributedString(attachment: attachment)
+
+        guard let txt = self.text else {
+            return
+        }
+
+        if behindText {
+            let strLabelText = NSMutableAttributedString(string: txt)
+            strLabelText.append(attachmentString)
+            self.attributedText = strLabelText
+        } else {
+            let strLabelText = NSAttributedString(string: txt)
+            let mutableAttachmentString = NSMutableAttributedString(attributedString: attachmentString)
+            mutableAttachmentString.append(strLabelText)
+            self.attributedText = mutableAttachmentString
+        }
+    }
 }
 
 

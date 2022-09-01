@@ -12,22 +12,26 @@ class CatCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var label: UILabel!
     
-    @IBOutlet weak var button: UIButton!
+
+    @IBOutlet weak var imgLabel: UILabel!
+    
+    override var isSelected: Bool {
+            didSet {
+                self.imgLabel.backgroundColor = isSelected ? .orange : .white
+                self.label.textColor = isSelected ? .orange : .black
+            }
+        
+        }
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        button.backgroundColor = .systemOrange
-        button.layer.cornerRadius = button.frame.width / 2
-        button.layer.masksToBounds = true
-    
-    }
+        
+        //button.backgroundColor = .systemOrange
+        imgLabel.layer.cornerRadius = imgLabel.frame.width / 2
+        imgLabel.layer.masksToBounds = true
+        
 
-    
-    @IBAction func buttonTapped(_ sender: Any) {
-        
-        button.backgroundColor = .white
-        
     }
     
     

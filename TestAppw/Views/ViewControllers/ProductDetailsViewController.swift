@@ -13,6 +13,7 @@ class ProductDetailsViewController: UIViewController, UICollectionViewDelegate, 
     
     @IBOutlet weak var imagecur: UICollectionView!
     
+    @IBOutlet weak var gotoCartButton: UIButton!
     
     @IBOutlet weak var detaildd: UICollectionView!
     
@@ -29,7 +30,7 @@ class ProductDetailsViewController: UIViewController, UICollectionViewDelegate, 
 
         // Do any additional setup after loading the view
         backButton.layer.cornerRadius = 10
-        
+        gotoCartButton.layer.cornerRadius = 10
         
         
         bind()

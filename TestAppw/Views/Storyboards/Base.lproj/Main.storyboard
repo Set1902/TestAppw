@@ -49,34 +49,39 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <inset key="scrollIndicatorInsets" minX="24" minY="0.0" maxX="24" maxY="0.0"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="20" id="0nN-FO-TmN">
-                                    <size key="itemSize" width="71" height="72"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="23" minimumInteritemSpacing="20" id="0nN-FO-TmN">
+                                    <size key="itemSize" width="71" height="93"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="cell" id="b7F-bd-OGI" customClass="CatCollectionViewCell" customModule="TestAppw" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="28" width="71" height="72"/>
+                                        <rect key="frame" x="20" y="17.666666666666668" width="71" height="93"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="yQW-Hn-GV4">
-                                            <rect key="frame" x="0.0" y="0.0" width="71" height="72"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="71" height="93"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLB-vr-w9N">
-                                                    <rect key="frame" x="0.0" y="-1" width="71" height="71"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDY-Ff-qgG">
+                                                    <rect key="frame" x="14" y="71.333333333333371" width="42" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain"/>
-                                                    <connections>
-                                                        <action selector="buttonTapped:" destination="b7F-bd-OGI" eventType="touchUpInside" id="JLv-J8-U70"/>
-                                                    </connections>
-                                                </button>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYL-Wm-2n5">
+                                                    <rect key="frame" x="0.0" y="0.0" width="71" height="71"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="71" height="72"/>
+                                        <size key="customSize" width="71" height="93"/>
                                         <connections>
-                                            <outlet property="button" destination="wLB-vr-w9N" id="mOK-yO-UOv"/>
+                                            <outlet property="imgLabel" destination="tYL-Wm-2n5" id="AGA-29-bnU"/>
+                                            <outlet property="label" destination="dDY-Ff-qgG" id="EwK-bi-PNn"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -515,8 +520,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="loz-yp-DWd">
                                 <rect key="frame" x="342" y="79" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="Layer 67"/>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="T5Q-B3-1QY">
                                 <rect key="frame" x="0.0" y="153" width="428" height="341"/>
@@ -683,6 +689,7 @@
                     <connections>
                         <outlet property="backButton" destination="q9a-E8-hnG" id="XXh-tA-TkL"/>
                         <outlet property="detaildd" destination="cm7-tE-ehL" id="Mj1-PB-V4g"/>
+                        <outlet property="gotoCartButton" destination="loz-yp-DWd" id="GkQ-NN-aAu"/>
                         <outlet property="imagecur" destination="T5Q-B3-1QY" id="A7z-1Q-iwn"/>
                     </connections>
                 </viewController>

@@ -83,7 +83,7 @@ class eeViewController: UIViewController, UICollectionViewDelegate, UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.catsales {
             let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CatCollectionViewCell
-            cellA.button.frame = CGRect(x: 0, y: 156, width: 71, height: 71)
+            //cellA.button.frame = CGRect(x: 0, y: 156, width: 71, height: 71)
             cellA.label.text = "hi"
             //fcellA.backgroundColor = .orange
             cellA.frame = CGRect(x: 0, y: 0, width: 71, height: 93)
