@@ -13,7 +13,7 @@ class FilterCollectionViewCell: UICollectionViewCell {
     
     
     
-    
+    @IBOutlet weak var exitButtonTapped: UIButton!
     
     
 }

@@ -304,7 +304,7 @@
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                                     <connections>
-                                                        <segue destination="URO-QH-n8j" kind="unwind" unwindAction="unwindToMainWithUnwindSegue:" id="5Kn-7Z-Z69"/>
+                                                        <segue destination="URO-QH-n8j" kind="unwind" unwindAction="unwindToMainWithUnwindSegue:" id="Qaq-D1-133"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kkv-z3-GId">
@@ -317,6 +317,9 @@
                                             </subviews>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="417" height="267"/>
+                                        <connections>
+                                            <outlet property="exitButtonTapped" destination="HwV-rk-S0G" id="cHp-Si-zBY"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -574,7 +577,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="Star 3" id="le6-uV-54T">
-                                                    <rect key="frame" x="38" y="94" width="18" height="18"/>
+                                                    <rect key="frame" x="38" y="78" width="18" height="18"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3W1-ma-24m">
@@ -612,31 +615,37 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DKA-wB-Fna">
-                                                    <rect key="frame" x="190" y="315" width="71" height="30"/>
+                                                    <rect key="frame" x="190" y="315" width="84" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="128 GB"/>
+                                                    <connections>
+                                                        <action selector="firstButtonTapped:" destination="LzY-be-WQc" eventType="touchUpInside" id="Vrx-Bk-GmZ"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ViJ-jV-vDp">
-                                                    <rect key="frame" x="282" y="315" width="71" height="30"/>
+                                                    <rect key="frame" x="282" y="315" width="86" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="256 GB"/>
+                                                    <connections>
+                                                        <action selector="secondButtonTapped:" destination="LzY-be-WQc" eventType="touchUpInside" id="dXf-XH-5Nh"/>
+                                                    </connections>
                                                 </button>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="Star 3" id="yJA-CO-0Nw">
-                                                    <rect key="frame" x="64" y="94" width="18" height="18"/>
+                                                    <rect key="frame" x="64" y="78" width="18" height="18"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="Star 3" id="UDf-bm-wDR">
-                                                    <rect key="frame" x="90" y="94" width="18" height="18"/>
+                                                    <rect key="frame" x="90" y="78" width="18" height="18"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="Star 3" id="zUC-Nj-VHe">
-                                                    <rect key="frame" x="116" y="94" width="18" height="18"/>
+                                                    <rect key="frame" x="116" y="78" width="18" height="18"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="Star 3" id="anY-1s-w64">
-                                                    <rect key="frame" x="140" y="94" width="18" height="18"/>
+                                                    <rect key="frame" x="140" y="78" width="18" height="18"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vek-3X-cRv">
@@ -653,13 +662,6 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SnC-ah-3Ia">
-                                                    <rect key="frame" x="330" y="217" width="48" height="11"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="MarkPro" family="Mark Pro" pointSize="11"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxM-Nc-oaH">
                                                     <rect key="frame" x="248" y="218" width="39" height="11"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -667,16 +669,84 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SnC-ah-3Ia">
+                                                    <rect key="frame" x="330" y="217" width="48" height="11"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="MarkPro" family="Mark Pro" pointSize="11"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select color and capacity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhq-K4-zQW">
+                                                    <rect key="frame" x="30" y="252" width="196" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AiO-aA-L3Z">
+                                                    <rect key="frame" x="92" y="313" width="39" height="39"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain"/>
+                                                    <connections>
+                                                        <action selector="colorSecondButtonTapped:" destination="LzY-be-WQc" eventType="touchUpInside" id="z56-WW-VTF"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ffy-ea-QUg">
+                                                    <rect key="frame" x="55" y="112" width="74" height="40"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="tintColor" systemColor="labelColor"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Shop">
+                                                        <fontDescription key="titleFontDescription" name="MarkPro" family="Mark Pro" pointSize="20"/>
+                                                    </buttonConfiguration>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fT-l7-oEb">
+                                                    <rect key="frame" x="34" y="313" width="39" height="39"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.40000000000000002" green="0.20000000000000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain"/>
+                                                    <connections>
+                                                        <action selector="colorFirstButtonTapped:" destination="LzY-be-WQc" eventType="touchUpInside" id="hG7-ek-Yx0"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFy-dX-ESt">
+                                                    <rect key="frame" x="163" y="111" width="93" height="40"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="tintColor" systemColor="labelColor"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Details">
+                                                        <fontDescription key="titleFontDescription" name="MarkPro" family="Mark Pro" pointSize="20"/>
+                                                    </buttonConfiguration>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CSR-8o-Ulf">
+                                                    <rect key="frame" x="281" y="111" width="111" height="40"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="tintColor" systemColor="labelColor"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Features">
+                                                        <fontDescription key="titleFontDescription" name="MarkPro" family="Mark Pro" pointSize="20"/>
+                                                    </buttonConfiguration>
+                                                </button>
                                             </subviews>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="428" height="421"/>
                                         <connections>
                                             <outlet property="button" destination="ozC-pd-aqN" id="lOZ-Y5-mjk"/>
+                                            <outlet property="colorBurronfirst" destination="5fT-l7-oEb" id="dRk-MO-a0r"/>
+                                            <outlet property="colorButtonsecond" destination="AiO-aA-L3Z" id="mhB-Oh-Lbt"/>
+                                            <outlet property="detailsButton" destination="CFy-dX-ESt" id="1Xe-8I-gGp"/>
+                                            <outlet property="featuresButton" destination="CSR-8o-Ulf" id="kmx-uI-9Z4"/>
+                                            <outlet property="firstButton" destination="DKA-wB-Fna" id="SSd-KW-Lry"/>
                                             <outlet property="label" destination="3W1-ma-24m" id="3z5-aH-ruT"/>
                                             <outlet property="label2" destination="Vek-3X-cRv" id="3p4-8j-mbA"/>
                                             <outlet property="label3" destination="3wD-aG-NTM" id="J7P-Ni-gC3"/>
                                             <outlet property="label4" destination="cxM-Nc-oaH" id="4GY-Dc-kha"/>
                                             <outlet property="label5" destination="SnC-ah-3Ia" id="7vO-so-29j"/>
+                                            <outlet property="secondButton" destination="ViJ-jV-vDp" id="I7y-yO-odA"/>
+                                            <outlet property="shopButton" destination="Ffy-ea-QUg" id="JE7-Oa-fji"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
