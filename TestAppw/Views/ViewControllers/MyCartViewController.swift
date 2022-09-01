@@ -82,6 +82,7 @@ class MyCartViewController: UIViewController, UICollectionViewDelegate, UICollec
         cellA.nameLabel.text = myCart.basket![indexPath.item].title!
         let pp: String = String(myCart.basket![indexPath.item].price!)
         cellA.priceLabel.text = "$\(pp)"
+        cellA.label.layer.cornerRadius = 20
         
         let url: String = myCart.basket![indexPath.item].images!
 
