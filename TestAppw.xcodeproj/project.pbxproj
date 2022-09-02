@@ -26,7 +26,7 @@
 		1D04126328B27B2C0044051D /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D04126228B27B2C0044051D /* DetailModel.swift */; };
 		1D04126528B27C040044051D /* MyCartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D04126428B27C040044051D /* MyCartModel.swift */; };
 		1D04126728B27C630044051D /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D04126628B27C630044051D /* Service.swift */; };
-		1D34077D28B6B86F00816F62 /* eeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D34077C28B6B86F00816F62 /* eeViewController.swift */; };
+		1D60F32028C2359000EDAE51 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D60F31F28C2359000EDAE51 /* LaunchViewController.swift */; };
 		1DB1DF4128BE369100A303AC /* detailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB1DF4028BE369100A303AC /* detailCollectionViewCell.swift */; };
 		1DB1DF4328BE4B5E00A303AC /* CartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB1DF4228BE4B5E00A303AC /* CartCollectionViewCell.swift */; };
 		1DB1DF4528BF782200A303AC /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB1DF4428BF782200A303AC /* FilterCollectionViewCell.swift */; };
@@ -80,7 +80,7 @@
 		1D04126228B27B2C0044051D /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 		1D04126428B27C040044051D /* MyCartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCartModel.swift; sourceTree = "<group>"; };
 		1D04126628B27C630044051D /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
-		1D34077C28B6B86F00816F62 /* eeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eeViewController.swift; sourceTree = "<group>"; };
+		1D60F31F28C2359000EDAE51 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		1DB1DF4028BE369100A303AC /* detailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailCollectionViewCell.swift; sourceTree = "<group>"; };
 		1DB1DF4228BE4B5E00A303AC /* CartCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCollectionViewCell.swift; sourceTree = "<group>"; };
 		1DB1DF4428BF782200A303AC /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -141,17 +141,15 @@
 		1D04121828B277040044051D /* TestAppw */ = {
 			isa = PBXGroup;
 			children = (
+				1D60F31E28C2348C00EDAE51 /* Delegate */,
 				1DE93E1528B548D4004A9487 /* MarkPro.ttf */,
 				1D04124F28B277FD0044051D /* Models */,
 				1D04124E28B277F20044051D /* ViewModels */,
 				1D04124D28B277EB0044051D /* Views */,
 				1D04124C28B277E40044051D /* Service */,
-				1D04121928B277040044051D /* AppDelegate.swift */,
-				1D04121B28B277040044051D /* SceneDelegate.swift */,
 				1D04122528B277060044051D /* Assets.xcassets */,
 				1D04122A28B277060044051D /* Info.plist */,
 				1D04122228B277040044051D /* TestAppw.xcdatamodeld */,
-				1D34077C28B6B86F00816F62 /* eeViewController.swift */,
 			);
 			path = TestAppw;
 			sourceTree = "<group>";
@@ -215,6 +213,7 @@
 			children = (
 				1D04121F28B277040044051D /* Main.storyboard */,
 				1D04122728B277060044051D /* LaunchScreen.storyboard */,
+				1D60F31F28C2359000EDAE51 /* LaunchViewController.swift */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -222,20 +221,61 @@
 		1D04125128B278240044051D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				1D04121D28B277040044051D /* MainViewController.swift */,
-				1D04125228B278660044051D /* ProductDetailsViewController.swift */,
-				1D04125428B2787D0044051D /* MyCartViewController.swift */,
-				1DE93E0F28B5326C004A9487 /* HotSalesCollectionViewCell.swift */,
-				1DE93E1128B53741004A9487 /* CatCollectionViewCell.swift */,
-				1DE93E1328B543C5004A9487 /* Best2CollectionViewCell.swift */,
-				1DD0F4A828B6368800A1D462 /* SheetViewController.swift */,
-				1DD0F4E628B6A30000A1D462 /* ProdDetCollectionViewCell.swift */,
-				1DB1DF4028BE369100A303AC /* detailCollectionViewCell.swift */,
-				1DB1DF4228BE4B5E00A303AC /* CartCollectionViewCell.swift */,
-				1DB1DF4428BF782200A303AC /* FilterCollectionViewCell.swift */,
-				1DB1DF4628C0E0BE00A303AC /* Tabb.swift */,
+				1D60F31D28C2347B00EDAE51 /* TabBar */,
+				1D60F31C28C2346D00EDAE51 /* Cart */,
+				1D60F31B28C2345100EDAE51 /* Details */,
+				1D60F31A28C2340D00EDAE51 /* HomeScreen */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1D60F31A28C2340D00EDAE51 /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				1D04121D28B277040044051D /* MainViewController.swift */,
+				1DE93E0F28B5326C004A9487 /* HotSalesCollectionViewCell.swift */,
+				1DE93E1128B53741004A9487 /* CatCollectionViewCell.swift */,
+				1DB1DF4428BF782200A303AC /* FilterCollectionViewCell.swift */,
+				1DE93E1328B543C5004A9487 /* Best2CollectionViewCell.swift */,
+				1DD0F4A828B6368800A1D462 /* SheetViewController.swift */,
+			);
+			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		1D60F31B28C2345100EDAE51 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				1D04125228B278660044051D /* ProductDetailsViewController.swift */,
+				1DD0F4E628B6A30000A1D462 /* ProdDetCollectionViewCell.swift */,
+				1DB1DF4028BE369100A303AC /* detailCollectionViewCell.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		1D60F31C28C2346D00EDAE51 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				1D04125428B2787D0044051D /* MyCartViewController.swift */,
+				1DB1DF4228BE4B5E00A303AC /* CartCollectionViewCell.swift */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		1D60F31D28C2347B00EDAE51 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				1DB1DF4628C0E0BE00A303AC /* Tabb.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		1D60F31E28C2348C00EDAE51 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				1D04121928B277040044051D /* AppDelegate.swift */,
+				1D04121B28B277040044051D /* SceneDelegate.swift */,
+			);
+			path = Delegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,12 +414,12 @@
 				1DB1DF4328BE4B5E00A303AC /* CartCollectionViewCell.swift in Sources */,
 				1D04125728B279750044051D /* MainViewModel.swift in Sources */,
 				1D04126728B27C630044051D /* Service.swift in Sources */,
+				1D60F32028C2359000EDAE51 /* LaunchViewController.swift in Sources */,
 				1DB1DF4528BF782200A303AC /* FilterCollectionViewCell.swift in Sources */,
 				1DE93E1028B5326C004A9487 /* HotSalesCollectionViewCell.swift in Sources */,
 				1D04121E28B277040044051D /* MainViewController.swift in Sources */,
 				1D04122428B277040044051D /* TestAppw.xcdatamodeld in Sources */,
 				1D04125928B2798B0044051D /* ProductDetailsViewModel.swift in Sources */,
-				1D34077D28B6B86F00816F62 /* eeViewController.swift in Sources */,
 				1DD0F4E728B6A30000A1D462 /* ProdDetCollectionViewCell.swift in Sources */,
 				1D04121A28B277040044051D /* AppDelegate.swift in Sources */,
 				1D04125328B278660044051D /* ProductDetailsViewController.swift in Sources */,
@@ -573,7 +613,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestAppw/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -602,7 +642,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestAppw/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

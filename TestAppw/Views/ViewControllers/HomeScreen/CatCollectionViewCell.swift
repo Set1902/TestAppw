@@ -29,6 +29,7 @@ class CatCollectionViewCell: UICollectionViewCell {
         
         imgLabel.layer.cornerRadius = imgLabel.frame.width / 2
         imgLabel.layer.masksToBounds = true
+        imgLabel.backgroundColor = .white
         
 
     }

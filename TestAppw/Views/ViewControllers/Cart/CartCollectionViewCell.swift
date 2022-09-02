@@ -27,6 +27,8 @@ class CartCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         
         labelCount.text = String(num)
+        label.layer.cornerRadius = 15
+        label.layer.masksToBounds = true
     }
     
     @IBAction func minusButtonTapped(_ sender: Any) {

@@ -45,7 +45,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         // Do any additional setup after loading the view
 
         qrButton.layer.cornerRadius = 8
-        //filterww.isHidden = true
         best.layer.cornerRadius = 20
         
        
@@ -95,15 +94,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
     }
 
-    @IBAction func ButtonTapped(_ sender: Any) {
-        self.tabBarController?.tabBar.isHidden = true
-        //filterww.isHidden = false
-        //filterww.layer.cornerRadius = 30
-        //filterww.layer.masksToBounds = true
-        
-    }
-    
-    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.Cat {
@@ -119,11 +109,9 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if collectionView == self.Cat {
             let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CatCollectionViewCell
             if indexPath.item == 0 {
-                cellA.imgLabel.backgroundColor = .white
-                cellA.isSelected = true
-                
-                //cellA.label.textColor = .orange
-                //cellA.imgLabel.backgroundColor = .orange
+                cellA.imgLabel.backgroundColor = .orange
+                cellA.label.textColor = .orange
+                //cellA.isSelected = true
             }
             cellA.imgLabel.addImageWith(name: cat[indexPath.item], behindText: false)
             cellA.label.text = catt[indexPath.item]
@@ -193,31 +181,17 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 }
             }
             
-            cellC.layer.shadowColor = UIColor.black.cgColor
-            cellC.layer.shadowOffset = CGSize(width: 0, height: 1.0)
-            cellC.layer.shadowRadius = 10
-            cellC.layer.shadowOpacity = 0.5
             cellC.layer.masksToBounds = false
-            
-            cellC.layer.cornerRadius = 10
+            cellC.layer.shadowOffset = CGSizeMake(0, 0)
+            cellC.layer.shadowColor = UIColor.black.cgColor
+            cellC.layer.shadowOpacity = 0.23
+            cellC.layer.shadowRadius = 5
             
             
             
             return cellC
         }
     }
-    
-    
-    @IBAction func filterButtonTapped(_ sender: Any) {
-        
-
-
-    }
-    
-    
-    
-    
-    
 }
 
 extension MainViewController {
