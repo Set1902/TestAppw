@@ -162,10 +162,15 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         else {
             
             let cellC = collectionView.dequeueReusableCell(withReuseIdentifier: "cell3", for: indexPath) as! Best2CollectionViewCell
+            cellC.layer.cornerRadius = 10
             let price: String = String(model.bestSeller![indexPath.item].priceWithoutDiscount!)
             let fullPrice: String = String(model.bestSeller![indexPath.item].discountPrice!)
             cellC.price.text = "$ \(price)"
-            cellC.fullPrice.text = "$ \(fullPrice)"
+            let attributedText = NSAttributedString(
+                string: "$\(fullPrice)",
+                attributes: [.strikethroughStyle: NSUnderlineStyle.single.rawValue]
+            )
+            cellC.fullPrice.attributedText = attributedText
             cellC.fullPrice.textColor = .gray
             cellC.name.text = model.bestSeller![indexPath.item].title
             cellC.button.setImage(UIImage(named:"like.png"), for: .normal)

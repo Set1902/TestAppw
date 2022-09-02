@@ -19,6 +19,7 @@ class MyCartViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBOutlet weak var Label: UILabel!
     
     
+    @IBOutlet weak var addButton: UIButton!
     
     @IBOutlet weak var backButton: UIButton!
     
@@ -35,6 +36,7 @@ class MyCartViewController: UIViewController, UICollectionViewDelegate, UICollec
 
         // Do any additional setup after loading the view.
         backButton.layer.cornerRadius = 10
+        addButton.layer.cornerRadius = 10
         bind()
         input.send(.viewDidLoad)
     }

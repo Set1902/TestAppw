@@ -696,6 +696,13 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Product Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nz5-wz-MS8">
+                                <rect key="frame" x="144" y="87" width="141" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="MarkPro" family="Mark Pro" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xMA-Uu-nSR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -875,12 +882,27 @@
                                     <fontDescription key="titleFontDescription" name="MarkPro" family="Mark Pro" pointSize="20"/>
                                 </buttonConfiguration>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gbz-Z7-JiC">
+                                <rect key="frame" x="352" y="82" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="Group-7"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKv-oc-Ysk">
+                                <rect key="frame" x="237" y="90" width="107" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FBP-oo-3CJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
                         <outlet property="Label" destination="ont-Xs-yWW" id="8KB-L6-YXG"/>
+                        <outlet property="addButton" destination="Gbz-Z7-JiC" id="kLe-nj-QZV"/>
                         <outlet property="backButton" destination="VMl-Xh-fL1" id="mop-K8-q8t"/>
                         <outlet property="cart" destination="Ww3-3P-FEi" id="2hy-Le-e9p"/>
                         <outlet property="checkoutButton" destination="OxM-UX-n56" id="Kh8-Bo-46s"/>
@@ -975,6 +997,7 @@
         <image name="Group-3" width="15" height="16"/>
         <image name="Group-5" width="18" height="18"/>
         <image name="Group-6" width="12" height="16"/>
+        <image name="Group-7" width="14" height="18"/>
         <image name="Group_11" width="11" height="11"/>
         <image name="Layer 67" width="18" height="18"/>
         <image name="Line 8" width="10" height="2"/>
