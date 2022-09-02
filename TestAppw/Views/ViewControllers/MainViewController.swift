@@ -119,8 +119,11 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if collectionView == self.Cat {
             let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CatCollectionViewCell
             if indexPath.item == 0 {
-                cellA.label.textColor = .orange
-                cellA.imgLabel.backgroundColor = .orange
+                cellA.imgLabel.backgroundColor = .white
+                cellA.isSelected = true
+                
+                //cellA.label.textColor = .orange
+                //cellA.imgLabel.backgroundColor = .orange
             }
             cellA.imgLabel.addImageWith(name: cat[indexPath.item], behindText: false)
             cellA.label.text = catt[indexPath.item]
@@ -163,14 +166,13 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             let fullPrice: String = String(model.bestSeller![indexPath.item].discountPrice!)
             cellC.price.text = "$ \(price)"
             cellC.fullPrice.text = "$ \(fullPrice)"
+            cellC.fullPrice.textColor = .gray
             cellC.name.text = model.bestSeller![indexPath.item].title
-            cellC.button.layer.cornerRadius = cellC.button.frame.width / 2
-
-            cellC.button.backgroundColor = .white
             cellC.button.setImage(UIImage(named:"like.png"), for: .normal)
-            
+            like = 1
             if model.bestSeller![indexPath.item].isFavorites == true {
                 cellC.button.setImage(UIImage(named:"like2.png"), for: .normal)
+                like = 2
             }
             let url: String =  model.bestSeller![indexPath.item].picture!
 
@@ -185,6 +187,17 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
                     cellC.image102.image = image
                 }
             }
+            
+            cellC.layer.shadowColor = UIColor.black.cgColor
+            cellC.layer.shadowOffset = CGSize(width: 0, height: 1.0)
+            cellC.layer.shadowRadius = 10
+            cellC.layer.shadowOpacity = 0.5
+            cellC.layer.masksToBounds = false
+            
+            cellC.layer.cornerRadius = 10
+            
+            
+            
             return cellC
         }
     }
@@ -192,11 +205,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     @IBAction func filterButtonTapped(_ sender: Any) {
         
-        let sheetViewController = SheetViewController(nibName: nil, bundle: nil)
-                
-                // Present it w/o any adjustments so it uses the default sheet presentation.
-                present(sheetViewController, animated: true, completion: nil)
-        
+
+
     }
     
     

@@ -32,7 +32,6 @@ class ProductDetailsViewController: UIViewController, UICollectionViewDelegate, 
         backButton.layer.cornerRadius = 10
         gotoCartButton.layer.cornerRadius = 10
         
-        
         bind()
         input.send(.viewDidLoad)
     }
@@ -57,7 +56,10 @@ class ProductDetailsViewController: UIViewController, UICollectionViewDelegate, 
     func updateUI(with detail: Details){
         detaildd.delegate = self
         detaildd.dataSource = self
-        detaildd.backgroundColor = .systemPink
+        detaildd.layer.shadowRadius = 30
+        detaildd.layer.shadowColor = UIColor.black.cgColor
+        detaildd.layer.shadowOpacity = 0.10
+        detaildd.layer.shadowOffset = CGSize(width: 0, height: 5)
         detaildd.layer.cornerRadius = 30
         imagecur.delegate = self
         imagecur.dataSource = self
@@ -100,6 +102,7 @@ class ProductDetailsViewController: UIViewController, UICollectionViewDelegate, 
             let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: "detcell", for: indexPath) as! ProdDetCollectionViewCell
             cellA.label.text = detail.title!
             cellA.button.backgroundColor = .orange
+            cellA.backgroundColor = .white
             cellA.button.layer.cornerRadius = 10
             cellA.label2.text = detail.cpu!
             cellA.label3.text = detail.camera!

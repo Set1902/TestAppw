@@ -43,6 +43,7 @@ class ProdDetCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var colorButtonsecond: UIButton!
     
     
+    @IBOutlet weak var likeButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -54,7 +55,7 @@ class ProdDetCollectionViewCell: UICollectionViewCell {
         colorBurronfirst.layer.cornerRadius = colorBurronfirst.frame.width / 2
         colorButtonsecond.layer.cornerRadius = colorButtonsecond.frame.width / 2
         colorBurronfirst.setImage(UIImage(named: "Vector-9.png"), for: .normal)
-        
+        likeButton.layer.cornerRadius = 10
         
 
     }
