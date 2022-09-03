@@ -8,6 +8,9 @@
 import UIKit
 import Combine
 
+
+var num: Int = 0
+
 class MyCartViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet weak var checkoutButton: UIButton!
@@ -24,7 +27,6 @@ class MyCartViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBOutlet weak var backButton: UIButton!
     
     
-    
     private var myCart = MyCart()
     private let vm = MyCartViewModel()
     private let input: PassthroughSubject<MyCartViewModel.Input, Never> = .init()
@@ -35,10 +37,12 @@ class MyCartViewController: UIViewController, UICollectionViewDelegate, UICollec
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
         backButton.layer.cornerRadius = 10
         addButton.layer.cornerRadius = 10
         bind()
         input.send(.viewDidLoad)
+        
     }
     private func bind() {
 
@@ -60,9 +64,10 @@ class MyCartViewController: UIViewController, UICollectionViewDelegate, UICollec
         cart.dataSource = self
         cart.delegate = self
         cart.layer.cornerRadius = 30
-        //cart.backgroundColor = .systemBlue
         
         self.myCart = mycart
+        tabBarController?.tabBar.items?.last?.badgeValue = "\(myCart.basket!.count)"
+        
         updateFinalPrice()
     }
     
@@ -80,7 +85,6 @@ class MyCartViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cellA = collectionView.dequeueReusableCell(withReuseIdentifier: "cell7", for: indexPath) as! CartCollectionViewCell
-        //cellA.backgroundColor = .systemPink
         cellA.nameLabel.text = myCart.basket![indexPath.item].title!
         let pp: String = String(myCart.basket![indexPath.item].price!)
         cellA.priceLabel.text = "$\(pp)"
