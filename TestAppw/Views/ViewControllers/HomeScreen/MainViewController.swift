@@ -7,7 +7,7 @@
 
 import UIKit
 import Combine
-class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
+class MainViewController: UIViewController {
     
     @IBOutlet weak var searchw: UITextField!
     
@@ -42,13 +42,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view
-
         qrButton.layer.cornerRadius = 8
         best.layer.cornerRadius = 20
-        
-       
-        
         bind()
         input.send(.viewDidLoad)
     }
@@ -89,12 +84,31 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         self.Cat.reloadData()
         self.best.reloadData()
         self.best2.reloadData()
-        
-        
-        
-        
     }
 
+    
+    
+    
+    
+    
+    @IBAction func filterButtonTapped(_ sender: Any) {
+
+    }
+    
+    
+    
+}
+
+extension MainViewController {
+    
+    @IBAction func unwindToMain(unwindSegue: UIStoryboardSegue) {
+
+    }
+    
+}
+
+
+extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.Cat {
@@ -174,12 +188,14 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
             DispatchQueue.global().async {
                let imageData = try? Data(contentsOf: imageURL!)
-                
-            let image = UIImage(data: imageData!)
-                
-                DispatchQueue.main.async {
-                    cellC.image102.image = image
+                if let imageData = imageData {
+                    let image = UIImage(data: imageData)
+                        
+                        DispatchQueue.main.async {
+                            cellC.image102.image = image
+                        }
                 }
+            
             }
             
             cellC.layer.masksToBounds = false
@@ -193,22 +209,9 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             return cellC
         }
     }
-    
-    @IBAction func filterButtonTapped(_ sender: Any) {
-
-    }
-    
-    
-    
 }
 
-extension MainViewController {
-    
-    @IBAction func unwindToMain(unwindSegue: UIStoryboardSegue) {
 
-    }
-    
-}
 
 extension UILabel {
 
@@ -234,5 +237,7 @@ extension UILabel {
         }
     }
 }
+
+
 
 

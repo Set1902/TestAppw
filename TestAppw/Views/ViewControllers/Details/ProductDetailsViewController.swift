@@ -63,6 +63,7 @@ class ProductDetailsViewController: UIViewController, UICollectionViewDelegate, 
         detaildd.layer.cornerRadius = 30
         imagecur.delegate = self
         imagecur.dataSource = self
+        
         detaildd.isScrollEnabled = true
         self.detail = detail
         
