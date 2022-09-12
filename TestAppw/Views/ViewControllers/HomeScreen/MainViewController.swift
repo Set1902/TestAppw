@@ -58,9 +58,7 @@ class MainViewController: UIViewController {
           .sink { [weak self] event in
           switch event {
           case .fetchMainModelDidSucceed(let model):
-              //print("hi")
               self?.updateUI(with: model)
-              //self?.Label.text = model.bestSeller![1].title
           case .fetchMainModelDidFail(let error):
               print(error)
           }
